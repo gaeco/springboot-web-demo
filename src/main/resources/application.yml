@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3305/mydb_dev
+    username: myUser
+    password: myPassword
+
+  redis:
+  #    host: db2.gaeco.net
+    host: localhost
+    port: 6378
+
+---
+spring:
+  profiles: prd
+
+  redis:
+    #    host: db2.gaeco.net
+    host: localhost
+    port: 6379
